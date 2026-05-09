@@ -1,0 +1,22 @@
+
+> nara-web-astro@0.0.1 build
+> astro build
+
+16:48:53 [types] Generated 20ms
+16:48:53 [build] output: "static"
+16:48:53 [build] mode: "static"
+16:48:53 [build] directory: /Users/diego/Downloads/PROYECTOS_DIEGO/01_NARA_Psychology/01_Plataformas_Web/nara-web-astro/dist/
+16:48:53 [build] Collecting build info...
+16:48:53 [build] ✓ Completed in 34ms.
+16:48:53 [build] Building static entrypoints...
+16:48:53 [vite] ✓ built in 597ms
+16:48:53 [ERROR] [vite] ✗ Build failed in 11ms
+The character "}" is not valid inside a JSX element
+  Location:
+    /Users/diego/Downloads/PROYECTOS_DIEGO/01_NARA_Psychology/01_Plataformas_Web/nara-web-astro/src/control-center/App.tsx:209:0
+  Stack trace:
+    at failureErrorWithLog (/Users/diego/Downloads/PROYECTOS_DIEGO/01_NARA_Psychology/01_Plataformas_Web/nara-web-astro/node_modules/esbuild/lib/main.js:1748:15)
+    at responseCallbacks.<computed> (/Users/diego/Downloads/PROYECTOS_DIEGO/01_NARA_Psychology/01_Plataformas_Web/nara-web-astro/node_modules/esbuild/lib/main.js:884:9)
+    at Socket.readFromStdout (/Users/diego/Downloads/PROYECTOS_DIEGO/01_NARA_Psychology/01_Plataformas_Web/nara-web-astro/node_modules/esbuild/lib/main.js:862:7)
+    at addChunk (node:internal/streams/readable:561:12)
+    at Readable.push (node:internal/streams/readable:392:5)

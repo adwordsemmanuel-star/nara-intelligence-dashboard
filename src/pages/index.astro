@@ -1,0 +1,418 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import GradientButton from '../components/ui/GradientButton.astro';
+import Logo from '../components/ui/Logo.astro';
+
+const WHATSAPP = "https://wa.me/5219983935293";
+const BASE = import.meta.env.BASE_URL;
+
+const specialists = [
+  {
+    name: "Emmanuel Reyes",
+    role: "Director & Psicólogo",
+    cedula: "3494779",
+    img: `${BASE}images/team-emmanuel.jpg`,
+    bio: "Psicólogo Senior con más de 25 años de experiencia. Consultor especializado en el ecosistema directivo y ejecutivo (ICAMI/IPADE). Enfoque en soluciones de alto impacto.",
+    studies: ["Mtría. Dirección de Empresas (IPADE)", "Mtría. Administración y Finanzas", "Especialista en Terapia de Pareja"],
+  },
+  {
+    name: "Adriana Garduza",
+    role: "Psicóloga Clínica",
+    cedula: "10467421",
+    img: `${BASE}images/team-adriana.jpg`,
+    bio: "Especialista en PNL e Inteligencia Emocional. Amplia experiencia en terapia de pareja, familias y adolescentes con enfoque humanista.",
+    studies: ["Lic. Psicología (Univ. del Sur)", "Mtría. PNL e Intel. Emocional", "Diplomado Terapia Familiar"],
+  },
+  {
+    name: "María Angélica Lara",
+    role: "Psicóloga Clínica",
+    cedula: "163533",
+    img: `${BASE}images/team-angelica.jpg`,
+    bio: "Especialista en bienestar emocional y salud sexual. Atención empática enfocada al acompañamiento humano y la mejora continua.",
+    studies: ["Mtría. Sexología Clínica (Form.)", "Máster en Psicología Clínica", "Dip. Terapia Cognitivo Conductual"],
+  },
+  {
+    name: "Aracelly Rodríguez",
+    role: "Psicóloga Infantil",
+    cedula: "11911922",
+    img: `${BASE}images/team-aracely.jpg`,
+    bio: "Acompaña a niños y adolescentes en su desarrollo emocional mediante Terapia de Juego. Orientación integral a padres.",
+    studies: ["Licenciatura en Psicología", "Especialista en Terapia de Juego", "Cert. Problemas de Aprendizaje"],
+  },
+  {
+    name: "Georgina Martínez",
+    role: "Psicóloga Forense",
+    cedula: "12778202",
+    img: `${BASE}images/team-georgina.jpg`,
+    bio: "Experta en psicología infantil y forense. Ayuda a niños a entender sus emociones y brinda orientación especializada a padres.",
+    studies: ["Lic. Psicología (Univ. La Salle)", "Dip. Psicología Forense Infantil", "Dip. Psicoterapia Infantil"],
+  },
+  {
+    name: "Laura Pomares",
+    role: "Psicoterapeuta",
+    cedula: "14075022",
+    img: `${BASE}images/team-laura.jpg`,
+    bio: "Especialista en duelo, tanatología y gestión emocional. Acompaña procesos de pérdida con profunda empatía y resiliencia.",
+    studies: ["Diplomado en Tanatología", "Máster en Biodecodificación", "Especialidad en Gestión Emocional"],
+  },
+];
+---
+
+<MainLayout 
+  title="Psicología de Alta Especialidad" 
+  description="Clínica boutique de psicología con especialistas de nivel Maestría. Terapia individual, pareja y familia en Cancún y Online.">
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- HERO SECTION                                        -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="pt-32 pb-20 bg-white">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-10">
+          <!-- Big Logo on Index -->
+          <div class="flex items-center">
+            <img src={`${BASE}images/nara-logo.png`} alt="NARA Logo" class="h-28 w-auto object-contain" />
+          </div>
+
+          <h1 class="text-6xl lg:text-[85px] font-serif leading-[1.05] text-nara-navy font-bold tracking-tight">
+            Terapia para <br />
+            todos los <span class="italic text-nara-pink font-medium">colores</span> <br />
+            de la vida.
+          </h1>
+
+          <p class="text-xl lg:text-2xl text-gray-800 leading-relaxed max-w-xl font-medium">
+            Un enfoque dinámico, moderno e inclusivo. En NARA celebramos tu individualidad mientras construimos tu bienestar.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-6 pt-4">
+            <GradientButton href="#servicios">
+              COMENZAR MI VIAJE
+            </GradientButton>
+          </div>
+
+          <div class="flex flex-wrap gap-8 pt-8 border-t border-gray-100 mt-8">
+            <div class="flex items-center gap-2 text-sm font-bold text-nara-navy/60 uppercase tracking-widest">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-nara-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              100% Especialistas con Postgrado
+            </div>
+            <div class="flex items-center gap-2 text-sm font-bold text-nara-navy/60 uppercase tracking-widest">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-nara-pink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              Privacidad Absoluta
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <div class="absolute -inset-4 bg-nara-gradient opacity-5 blur-3xl rounded-[3rem]"></div>
+          <div class="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border border-white">
+            <img 
+              src={`${BASE}images/pareja-premium.png`} 
+              alt="Ambiente terapéutico NARA" 
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          <!-- Info badge -->
+          <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 border border-gray-100 flex items-center gap-4 max-w-xs">
+            <div class="w-12 h-12 rounded-xl bg-nara-gold/10 flex items-center justify-center text-nara-gold">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-nara-navy uppercase tracking-wider">Atención Presencial y Online</p>
+              <p class="text-[10px] text-gray-400 mt-1 leading-tight">Mismo estándar de excelencia clínica internacional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- PROPUESTA DE VALOR                                  -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-24 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="space-y-10">
+          <div class="space-y-6">
+            <h2 class="text-4xl lg:text-5xl font-serif text-nara-navy leading-tight">
+              Atención de Alta Especialidad <br />
+              <span class="text-nara-gold italic">con Rostro Humano.</span>
+            </h2>
+            <p class="text-xl text-gray-500 leading-relaxed">
+              En NARA, creemos que la salud mental no debe ser fría ni intimidante. Hemos creado un entorno donde la calidez humana y el rigor científico convergen para tu bienestar.
+            </p>
+          </div>
+          
+          <div class="space-y-6">
+            {[
+              { icon: "grad", title: "Especialistas con Postgrado", desc: "El 100% de nuestro equipo cuenta con Maestrías o Especialidades clínicas vigentes." },
+              { icon: "target", title: "Resultados Enfocados", desc: "Modelos terapéuticos basados en evidencia diseñados para soluciones efectivas." },
+              { icon: "shield", title: "Entorno Seguro", desc: "Espacios diseñados para la privacidad absoluta, con estacionamiento y ubicación estratégica." },
+            ].map(({ icon, title, desc }) => (
+              <div class="flex items-start gap-5 p-6 bg-white rounded-3xl border border-gray-100 shadow-sm">
+                <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-2xl flex-shrink-0 text-nara-navy">
+                  {icon === "grad" && <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>}
+                  {icon === "target" && <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>}
+                  {icon === "shield" && <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>}
+                </div>
+                <div>
+                  <h3 class="font-bold text-nara-navy mb-1">{title}</h3>
+                  <p class="text-sm text-gray-500 leading-relaxed">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm text-center">
+            <div class="text-5xl font-bold font-serif text-nara-gold mb-3">+25</div>
+            <p class="text-xs text-gray-400 uppercase tracking-widest font-bold">Años de Trayectoria</p>
+          </div>
+          <div class="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm text-center">
+            <div class="text-5xl font-bold font-serif text-nara-navy mb-3">100%</div>
+            <p class="text-xs text-gray-400 uppercase tracking-widest font-bold">Especialistas Senior</p>
+          </div>
+          <div class="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-sm text-center sm:col-span-2">
+            <div class="text-4xl font-bold font-serif text-nara-aqua mb-3">MX · US</div>
+            <p class="text-xs text-gray-400 uppercase tracking-widest font-bold">Cobertura Internacional Online</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- PROGRAMAS DE ESPECIALIDAD                          -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section id="servicios" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div class="text-center mb-16 space-y-4">
+        <span class="text-xs font-bold text-nara-gold uppercase tracking-widest">Nuestra Oferta Clínica</span>
+        <h2 class="text-4xl lg:text-5xl font-serif text-nara-navy">Programas de Especialidad</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+            Hemos diseñado procesos terapéuticos estructurados para brindar soluciones reales en el corto y mediano plazo.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          {
+            icon: "heart",
+            title: "Pareja y Sexualidad",
+            desc: "Recuperen la comunicación e intimidad con protocolos basados en evidencia (EFT).",
+            href: "/programas/pareja",
+            accent: "border-nara-gold",
+          },
+          {
+            icon: "users",
+            title: "Niños y Familias",
+            desc: "Especialistas en desarrollo infantil, terapia de juego y dinámicas de armonía familiar.",
+            href: "/programas/familia",
+            accent: "border-nara-aqua",
+          },
+          {
+            icon: "user",
+            title: "Individual Adultos",
+            desc: "Un espacio exclusivo para el manejo de ansiedad, depresión y crecimiento personal.",
+            href: "/programas/individual",
+            accent: "border-gray-200",
+          },
+          {
+            icon: "rocket",
+            title: "Alto Rendimiento",
+            desc: "Coaching y psicología para ejecutivos y deportistas bajo alta presión competitiva.",
+            href: "/programas/alto-rendimiento",
+            accent: "border-nara-navy",
+          },
+        ].map(item => (
+          <a href={item.href} class:list={["group bg-white rounded-[2.5rem] p-8 border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col border-b-4", item.accent]}>
+            <div class="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-8 text-nara-navy group-hover:bg-nara-navy group-hover:text-white transition-colors duration-500">
+               {item.icon === "heart" && <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l9.77-9.77 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>}
+               {item.icon === "users" && <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>}
+               {item.icon === "user" && <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>}
+               {item.icon === "rocket" && <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-5c1.62-2.2 5-3 5-3"></path><path d="M12 15v5s3.03-.55 5-2c2.2-1.62 3-5 3-5"></path></svg>}
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-nara-navy mb-4 leading-tight">{item.title}</h3>
+            <p class="text-sm text-gray-500 leading-relaxed flex-grow">{item.desc}</p>
+            <div class="mt-8 flex items-center gap-3 text-sm font-bold text-nara-gold group-hover:gap-5 transition-all">
+              Ver detalles <span>→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- TERAPIA ONLINE (DESTACADA)                          -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div class="bg-white rounded-[4rem] p-10 lg:p-20 shadow-xl border border-gray-100 flex flex-col lg:flex-row gap-16 items-center overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-nara-aqua/5 blur-[100px] rounded-full"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-nara-gold/5 blur-[100px] rounded-full"></div>
+        
+        <div class="lg:w-1/2 space-y-8 relative z-10">
+          <span class="text-xs font-bold text-nara-aqua uppercase tracking-[0.3em]">NARA Online México & US</span>
+          <h2 class="text-4xl lg:text-6xl font-serif text-nara-navy leading-tight">
+            Especialistas de Élite, <br />
+            <span class="italic text-nara-gold text-nara-gradient">donde tú estés.</span>
+          </h2>
+          <p class="text-xl text-gray-500 leading-relaxed">
+            La misma excelencia clínica y calidez humana de nuestras sedes físicas, disponible con total flexibilidad para tu estilo de vida.
+          </p>
+          <ul class="space-y-4">
+            {[
+              "Sesiones por Zoom Premium (Alta fidelidad)",
+              "Misma calidad clínica e internacional",
+              "Sin traslados, desde tu espacio seguro",
+              "Atención para México y Estados Unidos"
+            ].map(item => (
+              <li class="flex items-center gap-4 text-gray-600 font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-nara-aqua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="pt-4">
+            <GradientButton href="/online-mexico">
+                Consultar disponibilidad Online
+            </GradientButton>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2 relative">
+          <div class="aspect-square bg-gray-50 rounded-[3rem] flex items-center justify-center border border-gray-100 overflow-hidden shadow-inner">
+             <div class="text-center p-12 space-y-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 mx-auto text-nara-navy opacity-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <p class="text-gray-400 font-serif italic text-xl">Acceso Global Premium</p>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- EQUIPO (HORIZONTAL GRID)                            -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section id="equipo" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div class="text-center mb-20 space-y-4">
+        <span class="text-xs font-bold text-nara-gold uppercase tracking-widest">Nuestro Equipo Clínico</span>
+        <h2 class="text-4xl lg:text-5xl font-serif text-nara-navy">Especialistas que inspiran confianza.</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+            Un equipo multidisciplinario dedicado a brindarte soluciones integrales con ética y profesionalismo.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        {specialists.map(sp => (
+          <div class="group flex flex-col bg-white rounded-[2.5rem] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500">
+            <div class="aspect-[4/5] overflow-hidden relative">
+              <img src={sp.img} alt={sp.name} class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-nara-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 text-white">
+                 <p class="text-xs font-bold text-nara-aqua uppercase tracking-widest mb-1">{sp.role}</p>
+                 <h4 class="text-xl font-bold font-serif">{sp.name}</h4>
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h3 class="font-serif font-bold text-2xl text-nara-navy group-hover:text-nara-gold transition-colors">{sp.name}</h3>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">{sp.role}</p>
+                </div>
+                <div class="text-[10px] font-bold text-nara-navy bg-nara-gold/10 px-2 py-1 rounded-lg">Céd. {sp.cedula}</div>
+              </div>
+              <p class="text-sm text-gray-500 leading-relaxed mb-6 flex-grow">{sp.bio}</p>
+              <div class="space-y-2 mb-8">
+                {sp.studies.map(s => (
+                  <div class="flex items-start gap-2.5 text-[11px] text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-nara-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    {s}
+                  </div>
+                ))}
+              </div>
+              <a href={WHATSAPP} class="w-full text-center py-3 border border-gray-100 rounded-xl text-xs font-bold text-nara-navy hover:bg-nara-gold hover:text-white hover:border-nara-gold transition-all uppercase tracking-widest">
+                Consultar disponibilidad
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SEDES (GOOGLE MAPS)                                 -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section id="sedes" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div class="text-center mb-16 space-y-4">
+        <span class="text-xs font-bold text-nara-navy uppercase tracking-widest">Instalaciones Boutique</span>
+        <h2 class="text-4xl lg:text-5xl font-serif text-nara-navy">Atención Presencial en Cancún</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+            Espacios diseñados para tu tranquilidad y confort, con excelente ubicación y acceso privado.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Sede 1 -->
+        <div class="bg-white rounded-[3rem] overflow-hidden border border-gray-100 shadow-sm flex flex-col">
+            <div class="h-64 relative">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.9!2d-86.8515!3d21.1619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2b31f25ab5a5%3A0x1!2sAv.+Bonampak%2C+Cancún%2C+Q.R.!5e0!3m2!1ses!2smx!4v1"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="p-10 space-y-4">
+                <h3 class="text-2xl font-serif font-bold text-nara-navy">Sede Alivia Centro Médico</h3>
+                <p class="text-sm text-gray-500 italic">Av. La Luna No. 12, Cancún, Q. Roo.</p>
+                <div class="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-nara-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2" ry="2"></rect><path d="M7 21v-4"></path><path d="M17 21v-4"></path><path d="M7 3v4"></path><path d="M17 3v4"></path></svg>
+                    Estacionamiento Privado Disponible
+                </div>
+            </div>
+        </div>
+
+        <!-- Sede 2 -->
+        <div class="bg-white rounded-[3rem] overflow-hidden border border-gray-100 shadow-sm flex flex-col">
+            <div class="h-64 relative">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.5!2d-86.837!3d21.152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4c2975f9e71fff%3A0x7d6b38ef050e0479!2sGacela%2020%2C%20SM%2020%2C%20Cancún!5e0!3m2!1ses!2smx!4v1"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="p-10 space-y-4">
+                <h3 class="text-2xl font-serif font-bold text-nara-navy">Sede Gacela SM 20</h3>
+                <p class="text-sm text-gray-500 italic">Calle Gacela No. 20, SM 20, Cancún, Q. Roo.</p>
+                <div class="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-nara-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2" ry="2"></rect><path d="M7 21v-4"></path><path d="M17 21v-4"></path><path d="M7 3v4"></path><path d="M17 3v4"></path></svg>
+                    Ubicación Privada y de Fácil Acceso
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- CTA FINAL                                          -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-32 bg-white">
+    <div class="max-w-4xl mx-auto px-8 text-center space-y-10">
+      <h2 class="text-4xl lg:text-6xl font-serif text-nara-navy">¿Damos el primer paso juntos?</h2>
+      <p class="text-xl text-gray-500 leading-relaxed">
+        Agenda una breve asesoría inicial sin costo para encontrar al especialista ideal para ti. Sin compromisos, solo claridad.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <GradientButton href={WHATSAPP}>
+          Asesoría sin costo vía WhatsApp
+        </GradientButton>
+      </div>
+      <p class="text-xs text-gray-400 uppercase tracking-widest">Atención con ética profesional inquebrantable</p>
+    </div>
+  </section>
+
+</MainLayout>

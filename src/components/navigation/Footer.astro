@@ -1,0 +1,81 @@
+---
+import Logo from '../ui/Logo.astro';
+const BASE = import.meta.env.BASE_URL;
+---
+
+<footer class="bg-white border-t border-gray-100 pt-24 pb-12">
+  <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+    <div class="grid lg:grid-cols-4 gap-12 mb-16">
+      <!-- Brand Block -->
+      <div class="lg:col-span-1 space-y-6">
+        <Logo class="scale-90 origin-left" />
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Clínica de alta especialidad en salud mental y bienestar emocional. Enfoque científico y trato humano de élite.
+        </p>
+        <div class="flex gap-4">
+          <!-- Social Icons Placeholder -->
+          <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-nara-gold transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-nara-gold transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849s-.011 3.585-.069 4.85c-.149 3.222-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849s.012-3.584.07-4.849c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.337 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.337-.2 6.78-2.618 6.98-6.98.058-1.28.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.337-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Block -->
+      <div class="lg:col-span-1 space-y-6">
+        <h4 class="text-sm font-bold uppercase tracking-widest text-nara-navy">Programas</h4>
+        <ul class="space-y-4">
+          <li><a href={`${BASE}programas/pareja`} class="text-sm text-gray-500 hover:text-nara-gold transition-colors">Pareja y Sexualidad</a></li>
+          <li><a href={`${BASE}programas/familia`} class="text-sm text-gray-500 hover:text-nara-gold transition-colors">Niños y Familia</a></li>
+          <li><a href={`${BASE}programas/individual`} class="text-sm text-gray-500 hover:text-nara-gold transition-colors">Individual</a></li>
+          <li><a href={`${BASE}programas/alto-rendimiento`} class="text-sm text-gray-500 hover:text-nara-gold transition-colors">Alto Rendimiento</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal Block 1 -->
+      <div class="lg:col-span-1 space-y-6">
+        <h4 class="text-sm font-bold uppercase tracking-widest text-nara-navy">Compromiso y Reserva</h4>
+        <div class="space-y-4">
+          <div>
+            <p class="text-[10px] font-bold text-nara-gold uppercase tracking-tighter mb-1">Cancelación y Reserva</p>
+            <p class="text-xs text-gray-500 leading-relaxed italic">
+              Puedes reagendar o cancelar sin costo avisando con un mínimo de 24 horas de anticipación. Las cancelaciones fuera de este plazo se consideran como sesiones realizadas.
+            </p>
+          </div>
+          <div>
+            <p class="text-[10px] font-bold text-nara-gold uppercase tracking-tighter mb-1">Confidencialidad</p>
+            <p class="text-xs text-gray-500 leading-relaxed italic">
+              Toda la información está protegida por estrictos códigos de ética profesional. Tu espacio en NARA es inquebrantable.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emergency Block -->
+      <div class="lg:col-span-1 space-y-6">
+        <h4 class="text-sm font-bold uppercase tracking-widest text-nara-navy">Sedes</h4>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          <strong>Cancún:</strong> Av. Bonampak, SM 4. <br />
+          <strong>Online:</strong> Cobertura México y USA.
+        </p>
+        <div class="bg-red-50 p-4 rounded-2xl border border-red-100">
+          <p class="text-[10px] font-bold text-red-600 uppercase mb-2">Aviso de Emergencia</p>
+          <p class="text-[10px] text-red-500 leading-tight">
+            NARA no es un servicio de crisis. En caso de peligro inmediato, llama al 911 (México/USA) o acude al hospital más cercano.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-gray-400">© 2026 NARA Psychology. Todos los derechos reservados.</p>
+      <div class="flex gap-6">
+        <a href={`${BASE}privacidad`} class="text-xs text-gray-400 hover:text-nara-gold">Aviso de Privacidad</a>
+        <a href={`${BASE}terminos`} class="text-xs text-gray-400 hover:text-nara-gold">Términos y Condiciones</a>
+      </div>
+    </div>
+  </div>
+</footer>

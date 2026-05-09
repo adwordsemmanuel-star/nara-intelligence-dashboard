@@ -1,0 +1,189 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import PricingCard from '../../components/ui/PricingCard.astro';
+import Logo from '../../components/ui/Logo.astro';
+import GradientButton from '../../components/ui/GradientButton.astro';
+---
+
+<MainLayout title="Terapia de Pareja Premium | Recuperen la Conexión">
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 py-24 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="space-y-10">
+      <h1 class="text-6xl lg:text-8xl font-serif leading-[1.1] text-nara-navy font-bold">
+        Recuperen la <br />
+        <span class="text-nara-pink italic">conexión</span>.
+      </h1>
+      <p class="text-2xl font-serif text-gray-700 leading-relaxed max-w-xl">
+        Terapia de Pareja Basada en Evidencia y Alta Especialidad.
+      </p>
+      <p class="text-lg text-gray-500 leading-relaxed max-w-xl">
+        No es solo hablar; es aplicar protocolos científicos para sanar el vínculo. Sesiones presenciales en Cancún y Online para México y USA.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 pt-4">
+        <GradientButton href="#oferta">
+          Solicitar Evaluación de Pareja
+        </GradientButton>
+      </div>
+    </div>
+    <div class="relative group">
+      <div class="absolute -inset-4 bg-nara-gradient opacity-10 blur-2xl rounded-[3rem] group-hover:opacity-20 transition-opacity"></div>
+      <div class="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border border-white/20">
+        <img 
+          src={`${import.meta.env.BASE_URL}images/pareja-premium.png`} 
+          alt="Pareja reconectando en un ambiente de calma" 
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Authority Section -->
+  <section class="bg-gray-50 text-nara-navy py-24 border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8">
+          <div class="inline-block px-4 py-1.5 rounded-full border border-nara-pink/20 bg-nara-pink/5 text-nara-pink text-[10px] font-bold uppercase tracking-widest">
+            Autoridad Clínica
+          </div>
+          <h2 class="text-4xl lg:text-6xl font-serif leading-tight font-bold">
+            Ustedes no están contratando a un psicólogo generalista.
+          </h2>
+          <p class="text-xl text-gray-600 leading-relaxed font-medium">
+            Nuestro equipo de especialistas de élite está coordinado por <strong>Emmanuel Reyes</strong>, con más de 25 años de experiencia en el ecosistema directivo y clínico.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-8">
+            <div class="space-y-3">
+              <div class="text-nara-pink font-bold text-3xl">100%</div>
+              <p class="text-sm text-gray-400 uppercase tracking-wider">Plantilla con Maestrías y Especialidades</p>
+            </div>
+            <div class="space-y-3">
+              <div class="text-nara-gold font-bold text-3xl">EFT</div>
+              <p class="text-sm text-gray-400 uppercase tracking-wider">Modelos basados en la ciencia (Terapia Focalizada en las Emociones)</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-12 rounded-[3rem] border border-gray-100 shadow-sm">
+          <blockquote class="text-2xl font-serif italic text-gray-600 leading-relaxed mb-8">
+            "En NARA, entendemos que la pareja es el núcleo del bienestar humano. No dejamos su relación al azar; usamos ciencia para reconstruirla."
+          </blockquote>
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-full bg-nara-gradient p-0.5 shadow-sm">
+              <div class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                <img src={`${import.meta.env.BASE_URL}images/nara-logo.png`} alt="Director NARA" class="w-8 h-8 opacity-80" />
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-nara-navy text-lg">Emmanuel Reyes</div>
+              <div class="text-sm text-nara-pink font-bold uppercase tracking-widest">Director de NARA Psychology</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Offer Section -->
+  <section id="oferta" class="py-32 bg-gray-50/50">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 text-center mb-20 space-y-6">
+      <h2 class="text-5xl lg:text-7xl font-serif text-nara-navy font-bold">Programas de Transformación</h2>
+      <p class="text-gray-500 max-w-2xl mx-auto text-xl font-medium">
+        Hemos diseñado procesos estructurados para pasar del conflicto a la complicidad. Elijan el nivel de acompañamiento que su relación merece.
+      </p>
+    </div>
+    
+    <div class="max-w-6xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-stretch">
+      <PricingCard 
+        title="Evaluación Inicial"
+        price="$1,200"
+        description="El punto de partida crítico para entender la dinámica de su relación y trazar un camino claro."
+        features={[
+          "Sesión diagnóstica profunda (90 min)",
+          "Análisis de patrones de conflicto",
+          "Entrega de Hoja de Ruta clínica",
+          "Sin compromisos a largo plazo"
+        ]}
+        ctaText="SOLICITAR EVALUACIÓN"
+      />
+      
+      <PricingCard 
+        title="Programa Reconexión"
+        description="Nuestro programa insignia de 3 meses para parejas que buscan una transformación real y duradera."
+        isFeatured={true}
+        features={[
+          "8 Sesiones conjuntas de alta intensidad",
+          "2 Sesiones individuales por persona",
+          "Protocolo de soporte en crisis vía WhatsApp",
+          "Material de trabajo y ejercicios prácticos",
+          "Seguimiento post-programa de 30 días"
+        ]}
+        ctaText="VER DISPONIBILIDAD"
+      />
+    </div>
+  </section>
+
+  <!-- Sexuality Section -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div class="relative bg-gradient-to-br from-nara-aqua/5 to-white rounded-[4rem] p-12 lg:p-24 overflow-hidden border border-nara-aqua/10">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-nara-aqua/10 blur-[120px] rounded-full -mr-48 -mt-48"></div>
+        <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8">
+            <h2 class="text-4xl lg:text-5xl font-serif text-nara-navy leading-tight">
+              Salud Sexual: <br />
+              <span class="text-nara-aqua">Sin tabúes, con ciencia.</span>
+            </h2>
+            <p class="text-xl text-gray-600 leading-relaxed">
+              Abordamos la sexualidad como un pilar fundamental del bienestar de la pareja. En NARA, eliminamos el estigma y tratamos las disfunciones y la falta de deseo con un enfoque clínico y humano.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 text-nara-navy font-medium">
+                <div class="w-2 h-2 rounded-full bg-nara-aqua"></div>
+                Terapia para Disfunciones Sexuales
+              </li>
+              <li class="flex items-center gap-3 text-nara-navy font-medium">
+                <div class="w-2 h-2 rounded-full bg-nara-aqua"></div>
+                Reconexión del deseo y erotismo
+              </li>
+              <li class="flex items-center gap-3 text-nara-navy font-medium">
+                <div class="w-2 h-2 rounded-full bg-nara-aqua"></div>
+                Comunicación sexual asertiva
+              </li>
+            </ul>
+          </div>
+          <div class="aspect-video lg:aspect-square rounded-[3rem] bg-gray-50 flex items-center justify-center overflow-hidden shadow-inner border border-gray-100">
+            <!-- Representación abstracta o imagen de alta gama -->
+            <div class="text-center p-12">
+              <div class="text-5xl mb-6">✨</div>
+              <h3 class="text-2xl font-serif text-nara-navy mb-4">Enfoque Boutique</h3>
+              <p class="text-gray-500 text-sm">Privacidad absoluta y un entorno diseñado para la vulnerabilidad segura.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Methodology Section -->
+  <section class="py-24 bg-white border-t border-gray-100">
+    <div class="max-w-3xl mx-auto px-8 text-center space-y-12">
+      <h2 class="text-4xl font-serif text-nara-navy">Metodología y Resultados</h2>
+      <p class="text-xl text-gray-600 leading-relaxed">
+        La terapia en NARA es un proceso estructurado, no una charla al azar. Cada intervención está diseñada para moverlos de la reactividad a la respuesta consciente.
+      </p>
+      
+      <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 text-left">
+        <p class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Disclaimer de Compromiso</p>
+        <p class="text-gray-600 italic">
+          "Los resultados reales nacen de la constancia y el método científico. Nuestro equipo provee la brújula y la ciencia, pero la transformación es un viaje que emprenden ustedes."
+        </p>
+      </div>
+
+      <div class="pt-8">
+        <GradientButton text="Solicitar Evaluación de Pareja" href="#oferta" />
+        <p class="mt-6 text-sm text-gray-400">Cupos limitados para el Programa Reconexión Profunda.</p>
+      </div>
+    </div>
+  </section>
+</MainLayout>

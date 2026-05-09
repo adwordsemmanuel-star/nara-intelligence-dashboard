@@ -1,0 +1,141 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import GradientButton from '../../components/ui/GradientButton.astro';
+
+const BASE = import.meta.env.BASE_URL;
+
+const mermaidCode = `
+    graph TD
+        %% Capa de Entrada
+        User((Paciente/Lead)) -->|WA Business API| Judge
+        User -->|Web Login| Judge
+
+        %% Capa de Inteligencia
+        subgraph AI_ORCHESTRATOR [Cerebro NARA - NVIDIA/Gemini]
+            direction TB
+            Judge{"Analizador de Intención"}
+            Triaje[Asignación de Especialista]
+            Crisis[Detector de Emergencia]
+        end
+
+        Judge -->|Consulta General| Triaje
+        Judge -->|Duda Difícil| Crisis
+        
+        %% Bucle Humano
+        Crisis -->|Alerta Urgente| Telegram((Emmanuel / Ivette))
+        Telegram -->|Control Manual| User
+
+        %% Capa de Herramientas
+        subgraph TOOLS [Gestión Integral]
+            Cal[Calendarios Psicólogos]
+            Rooms[(Disponibilidad Salas)]
+            CRM[(Notion CRM)]
+            Pay[Pasarela Pagos]
+        end
+
+        Triaje -->|Consulta| Cal
+        Triaje -->|Consulta| Rooms
+        
+        Cal & Rooms -->|Confirmado| Pay
+        Pay -->|Pago OK| Confirm[Cita Agendada]
+        Confirm -->|Sync| CRM
+        Confirm -->|WA| User
+
+        %% Proactividad
+        CRM -->|Cancelación| Waitlist[Lista de Espera]
+        Waitlist -->|Mensaje| User
+`;
+---
+
+<MainLayout 
+  title="Visión NARA 2026 | Arquitectura de Inteligencia" 
+  description="Diagrama de flujo y arquitectura del sistema automatizado NARA 360.">
+  
+  <section class="pt-32 pb-20 bg-white">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div class="max-w-3xl space-y-6 mb-16">
+        <p class="text-xs font-bold text-nara-pink uppercase tracking-[0.3em] flex
+          items-center gap-4">
+          Propuesta Tecnológica · Confidencial
+          <span class="h-px w-20 bg-nara-gradient block"></span>
+        </p>
+        <h1 class="text-5xl lg:text-7xl font-serif text-nara-navy leading-tight font-bold">
+          Arquitectura <span class="italic text-nara-gradient">NARA 360.</span>
+        </h1>
+        <p class="text-xl text-gray-500 leading-relaxed font-medium">
+          Este diagrama visualiza cómo la Inteligencia Artificial se integra con el equipo
+          humano para escalar la clínica sin perder la calidez y el control clínico de Emmanuel e Ivett.
+        </p>
+      </div>
+
+      <!-- Contenedor del Diagrama -->
+      <div class="bg-gray-50 rounded-[3rem] p-8 lg:p-16 border border-gray-100 shadow-sm
+          overflow-hidden mb-20">
+        <div class="mermaid flex justify-center bg-white p-8 rounded-3xl border border-gray-50
+          shadow-inner overflow-x-auto">
+            {mermaidCode}
+        </div>
+      </div>
+
+      <!-- Explicación de Puntos de Control -->
+      <div class="grid md:grid-cols-3 gap-12 mb-20">
+        <div class="space-y-4">
+            <div class="w-12 h-12 bg-nara-pink/10 rounded-2xl flex items-center justify-center
+          text-nara-pink text-xl font-bold">1</div>
+            <h3 class="text-xl font-serif font-bold text-nara-navy">Filtro de Crisis</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">El sistema detecta palabras clave
+          de alta ansiedad o urgencia y desconecta al bot, dándole el mando a un humano vía Telegram de
+          inmediato.</p>
+        </div>
+        <div class="space-y-4">
+            <div class="w-12 h-12 bg-nara-blue/10 rounded-2xl flex items-center justify-center
+          text-nara-blue text-xl font-bold">2</div>
+            <h3 class="text-xl font-serif font-bold text-nara-navy">Disponibilidad Dual</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">La IA cruza la agenda de la
+          psicóloga con la disponibilidad de las salas físicas en Cancún para evitar sobre-venta de
+          espacios.</p>
+        </div>
+        <div class="space-y-4">
+            <div class="w-12 h-12 bg-nara-gold/10 rounded-2xl flex items-center justify-center
+          text-nara-gold text-xl font-bold">3</div>
+            <h3 class="text-xl font-serif font-bold text-nara-navy">Recuperación de Fugas</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Ante una cancelación, la IA
+          escribe automáticamente a los pacientes en espera para rellenar ese hueco y no perder
+          ingresos.</p>
+        </div>
+      </div>
+
+      <div class="text-center p-12 bg-nara-gradient rounded-[3rem] text-white space-y-6">
+        <h2 class="text-3xl font-serif font-bold">¿Listo para prototipar el primer
+          módulo?</h2>
+        <p class="max-w-xl mx-auto opacity-90">Podemos empezar por el Triaje de WhatsApp
+          conectado a Google Calendar.</p>
+        <div class="pt-4">
+            <a href={`${BASE}#contacto`} class="bg-white text-nara-navy px-10 py-5
+          rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all
+          inline-block">
+                AGENDAR REUNIÓN TÉCNICA
+            </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script para renderizar Mermaid -->
+  <script is:inline
+          src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script is:inline>
+    mermaid.initialize({ 
+        startOnLoad: true,
+        theme: 'base',
+        themeVariables: {
+            primaryColor: '#F0949D',
+            primaryTextColor: '#fff',
+            primaryBorderColor: '#F0949D',
+            lineColor: '#7EB2E6',
+            secondaryColor: '#7EB2E6',
+            tertiaryColor: '#fff'
+        }
+    });
+  </script>
+</MainLayout>

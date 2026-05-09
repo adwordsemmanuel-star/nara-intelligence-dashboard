@@ -1,0 +1,113 @@
+---
+import Logo from '../ui/Logo.astro';
+const BASE = import.meta.env.BASE_URL;
+const isIndex = Astro.url.pathname === BASE || Astro.url.pathname === `${BASE}index.html`;
+---
+
+<nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-500 bg-white/80 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+    <div class="flex justify-between h-20 items-center">
+      <!-- Logo (Hidden on Index) -->
+      <div class:list={["flex-shrink-0", { "invisible pointer-events-none": isIndex }]}>
+        <a href={BASE} class="hover:opacity-90 transition-opacity">
+          <Logo />
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href={BASE} class="text-sm font-medium text-nara-navy hover:text-nara-gold transition-colors">Inicio</a>
+        
+        <!-- Especialidades Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-sm font-medium text-nara-navy group-hover:text-nara-gold transition-colors">
+            Especialidades
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <div class="absolute top-full -left-4 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div class="bg-white border border-gray-100 rounded-2xl shadow-xl p-4 w-64 overflow-hidden">
+              <div class="space-y-1">
+                <a href={`${BASE}programas/pareja`} class="block px-4 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-nara-gold rounded-xl transition-all">Pareja y Sexualidad</a>
+                <a href={`${BASE}programas/familia`} class="block px-4 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-nara-gold rounded-xl transition-all">Niños y Familia</a>
+                <a href={`${BASE}programas/individual`} class="block px-4 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-nara-gold rounded-xl transition-all">Individual</a>
+                <a href={`${BASE}programas/alto-rendimiento`} class="block px-4 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-nara-gold rounded-xl transition-all">Alto Rendimiento</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href={`${BASE}#equipo`} class="text-sm font-medium text-nara-navy hover:text-nara-gold transition-colors">Nuestro Equipo</a>
+        <a href={`${BASE}#sedes`} class="text-sm font-medium text-nara-navy hover:text-nara-gold transition-colors">Sedes y Online</a>
+        
+        <!-- CTA Button -->
+        <a 
+          href="https://wa.me/5219983935293" 
+          class="bg-nara-gold text-white px-8 py-3 rounded-full text-sm font-bold hover:shadow-lg hover:shadow-nara-gold/20 active:scale-95 transition-all"
+        >
+          Agendar Evaluación
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-nara-navy p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 py-6 px-8 animate-in fade-in slide-in-from-top-4">
+    <div class="flex flex-col space-y-4">
+      <a href={BASE} class="text-lg font-medium text-nara-navy">Inicio</a>
+      <div class="space-y-3 pt-2">
+        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Especialidades</p>
+        <a href={`${BASE}programas/pareja`} class="block text-gray-600 pl-2">Pareja y Sexualidad</a>
+        <a href={`${BASE}programas/familia`} class="block text-gray-600 pl-2">Niños y Familia</a>
+        <a href={`${BASE}programas/individual`} class="block text-gray-600 pl-2">Individual</a>
+        <a href={`${BASE}programas/alto-rendimiento`} class="block text-gray-600 pl-2">Alto Rendimiento</a>
+      </div>
+      <a href={`${BASE}#equipo`} class="text-lg font-medium text-nara-navy">Nuestro Equipo</a>
+      <a href={`${BASE}#sedes`} class="text-lg font-medium text-nara-navy">Sedes y Online</a>
+      <div class="pt-4">
+        <a 
+          href="https://wa.me/5219983935293" 
+          class="block w-full bg-nara-gold text-white py-4 rounded-full text-center font-bold"
+        >
+          Agendar Evaluación
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  // Sticky Scroll Effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      nav?.classList.add('shadow-sm');
+    } else {
+      nav?.classList.remove('shadow-sm');
+    }
+  });
+
+  // Mobile Menu Toggle
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+</script>

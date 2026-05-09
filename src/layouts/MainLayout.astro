@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/navigation/Navbar.astro';
+import Footer from '../components/navigation/Footer.astro';
+import Logo from '../components/ui/Logo.astro';
+
+
+
+interface Props {
+	title: string;
+	description?: string;
+	hideNavLogo?: boolean;
+}
+
+const { title, description = "NARA Psychology - Terapia para todos los colores de la vida.", hideNavLogo = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | NARA Psychology</title>
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-white">
+		<Navbar hideLogo={hideNavLogo} />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+
+</html>

@@ -1,0 +1,126 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import GradientButton from '../../components/ui/GradientButton.astro';
+
+const WHATSAPP = "https://wa.me/5219983935293";
+
+const articles = [
+  {
+    num: "01",
+    tag: "Vida en Pareja",
+    tagClass: "bg-nara-pink/10 text-nara-pink",
+    time: "6 min",
+    title: "El secreto que los terapeutas de pareja más exitosos conocen: la Terapia Focalizada en las Emociones",
+    excerpt: "El 70% de las parejas que completan la EFT alcanzan remisión completa de síntomas. No es una opinión — es el resultado de un meta-análisis de la APA 2024.",
+    source: "Spengler et al. (2024) · Couple and Family Psychology · APA PsycNet"
+  },
+  {
+    num: "02",
+    tag: "Psicología Infantil",
+    tagClass: "bg-nara-blue/10 text-nara-blue",
+    time: "7 min",
+    title: "Cómo los primeros 3 años de vida moldean la regulación emocional de tu hijo para siempre",
+    excerpt: "Un ensayo clínico 2025 confirma que la 'paternidad responsiva' en los primeros años predice la capacidad de autorregulación. Lo que haces hoy construye el cerebro de mañana.",
+    source: "Hernandez Acton & Kubiniec (2025) · Developmental Psychology · APA PsycNet"
+  },
+  {
+    num: "03",
+    tag: "Ciencia en Acción",
+    tagClass: "bg-nara-gold/10 text-nara-gold",
+    time: "5 min",
+    title: "La alianza terapéutica: el ingrediente invisible que determina si la terapia funciona",
+    excerpt: "El factor más predictivo del éxito terapéutico no es la técnica — es la relación. Un seguimiento a un año publicado en 2025 lo confirma con datos concretos.",
+    source: "Stahl et al. (2025) · Journal of Psychotherapy Integration · APA PsycNet"
+  }
+];
+---
+
+<MainLayout title="Mente Viva | Blog de NARA" description="Artículos psicológicos basados en evidencia científica. Crianza, pareja y salud mental por NARA Psicología.">
+  
+  <!-- HERO BLOG -->
+  <section class="pt-32 pb-20 bg-white">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+      <div class="max-w-3xl space-y-6">
+        <p class="text-xs font-bold text-nara-pink uppercase tracking-[0.3em] flex items-center gap-4">
+          NARA Psicología · Blog Académico
+          <span class="h-px w-20 bg-nara-gradient block"></span>
+        </p>
+        <h1 class="text-6xl lg:text-8xl font-serif text-nara-navy leading-tight font-bold">
+          Mente <span class="italic text-nara-gradient">Viva.</span> <br />
+          Ciencia que se siente.
+        </h1>
+        <p class="text-xl text-gray-500 leading-relaxed font-medium">
+          Artículos escritos por el equipo clínico de NARA. Traducimos la investigación de vanguardia a la vida real de las familias en México y USA.
+        </p>
+        
+        <div class="flex flex-wrap gap-3 pt-6">
+            {["🧒 Infantil", "💑 Pareja", "🧠 Adulto", "🔬 Ciencia"].map(pill => (
+                <span class="px-4 py-1.5 rounded-full border border-gray-100 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                    {pill}
+                </span>
+            ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTADO DE ARTÍCULOS -->
+  <section class="pb-32 bg-white">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20">
+        <div class="border-b border-gray-100 pb-4 mb-8">
+            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Publicaciones Recientes</p>
+        </div>
+
+        <div class="divide-y divide-gray-100">
+            {articles.map(art => (
+                <a href="#" class="group grid grid-cols-[60px_1fr_auto] gap-8 py-12 hover:bg-gray-50/50 transition-all rounded-[2rem] px-4 -mx-4">
+                    <div class="font-serif text-5xl font-bold text-gray-100 group-hover:text-nara-pink/20 transition-colors">
+                        {art.num}
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <span class:list={["text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full", art.tagClass]}>
+                                {art.tag}
+                            </span>
+                            <span class="text-xs text-gray-400">{art.time} de lectura</span>
+                        </div>
+                        <h2 class="text-2xl lg:text-3xl font-serif font-bold text-nara-navy group-hover:text-nara-blue transition-colors">
+                            {art.title}
+                        </h2>
+                        <p class="text-gray-500 leading-relaxed max-w-2xl">
+                            {art.excerpt}
+                        </p>
+                        <p class="text-[10px] text-gray-400 italic">
+                            {art.source}
+                        </p>
+                    </div>
+                    <div class="flex items-center text-gray-200 group-hover:text-nara-blue group-hover:translate-x-2 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                        </svg>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <footer class="bg-gray-50 py-16 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-8 sm:px-12 lg:px-20 text-center space-y-10">
+        <div class="max-w-3xl mx-auto p-8 bg-white rounded-3xl border border-gray-100 shadow-sm">
+            <p class="text-xs text-gray-500 leading-relaxed italic">
+                <strong>Aviso importante:</strong> El contenido de Mente Viva tiene fines informativos y educativos. Basado en investigación científica revisada por pares. No sustituye la evaluación psicológica individualizada. Si atraviesas una crisis, busca ayuda profesional de inmediato (911 en México y USA).
+            </p>
+        </div>
+        
+        <div class="space-y-4">
+            <h3 class="font-serif text-2xl text-nara-navy">¿Te gustaría profundizar en tu proceso?</h3>
+            <GradientButton href={WHATSAPP}>
+                COMENZAR MI VIAJE
+            </GradientButton>
+        </div>
+    </div>
+  </footer>
+
+</MainLayout>

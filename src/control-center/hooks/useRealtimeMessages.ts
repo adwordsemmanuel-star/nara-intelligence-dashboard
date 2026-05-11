@@ -71,15 +71,42 @@ export const useRealtimeMessages = (conversacionId: string | null) => {
   const sendMessage = async (contenido: string, contactoId: string, tipo: 'text' | 'image' | 'audio' = 'text') => {
     if (!conversacionId || !contenido.trim() || !contactoId) return;
     
-    const { error } = await supabase.from('mensajes').insert([{
-      conversacion_id: conversacionId,
-      contacto_id: contactoId,
-      direccion: 'saliente',
-      tipo,
-      contenido
-    }]);
+    try {
+      // 1. Obtener el teléfono del contacto
+      const { data: contact } = await supabase
+        .from('contactos')
+        .select('telefono')
+        .eq('id', contactoId)
+        .single();
 
-    if (error) console.error('Error enviando mensaje:', error.message);
+      if (!contact?.telefono) throw new Error('No se encontró el teléfono del contacto');
+
+      // 2. Enviar a la API del Bot (Railway)
+      const BACKEND_URL = import.meta.env.PUBLIC_BACKEND_URL || 'https://nara-intelligence-core-production.up.railway.app';
+      
+      const response = await fetch(`${BACKEND_URL}/send-message`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          telefono: contact.telefono,
+          mensaje: contenido,
+          conversacion_id: conversacionId,
+          contacto_id: contactoId
+        })
+      });
+
+      if (!response.ok) {
+        const errData = await response.json();
+        throw new Error(errData.error || 'Error en el servidor de Railway');
+      }
+
+      // Nota: El backend de Railway ya hace el INSERT en Supabase al enviar con éxito.
+      // No es necesario hacerlo aquí para evitar duplicados.
+      
+    } catch (error: any) {
+      console.error('❌ Error enviando mensaje:', error.message);
+      alert('Error al enviar el mensaje: ' + error.message);
+    }
   };
 
   return { messages, loading, sendMessage };

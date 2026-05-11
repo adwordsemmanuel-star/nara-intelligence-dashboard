@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /consulta/premium/
+  
+  # Si el archivo o carpeta existe, cargarlo directamente
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Si no existe (rutas de Astro), enviar a index.html
+  RewriteRule ^(.*)$ index.html [L]
+</IfModule>

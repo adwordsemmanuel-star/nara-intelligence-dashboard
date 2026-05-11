@@ -8,9 +8,9 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   base: '/terapia/',
+  trailingSlash: 'always',
   build: {
-    assets: 'assets',
-    format: 'file'
+    assets: 'assets'
   },
 
   vite: {

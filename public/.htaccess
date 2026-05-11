@@ -1,18 +1,11 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /terapia/
+RewriteEngine On
+RewriteBase /terapia/
 
-  # Forzar barra diagonal al final de /admin
-  RewriteRule ^admin$ admin/ [R=301,L]
-  
-  # Si la ruta es /admin/ servir el index.html de esa carpeta
-  RewriteRule ^admin/$ admin/index.html [L]
+# Redirigir /admin a /admin/ (con barra)
+RewriteRule ^admin$ admin/ [R=301,L]
 
-  # Si el archivo o carpeta física existe, cargarlo directamente
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
-  RewriteRule ^ - [L]
+# Si el archivo no existe, intentar cargar el index.html de la carpeta correspondiente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^admin/(.*)$ admin/index.html [L]
 
-  # Todo lo demás al index.html de la raíz
-  RewriteRule ^(.*)$ index.html [L]
-</IfModule>

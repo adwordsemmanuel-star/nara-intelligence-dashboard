@@ -8,9 +8,9 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   base: '/consulta/premium/',
-
   build: {
-    assets: 'assets'
+    assets: 'assets',
+    format: 'file'
   },
 
   vite: {

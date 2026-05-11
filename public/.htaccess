@@ -1,15 +1,18 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /consulta/premium/
+
+  # Forzar barra diagonal al final de /admin
+  RewriteRule ^admin$ admin/ [R=301,L]
   
-  # Si la ruta es /admin o /admin/ (sin .html), servir admin.html
-  RewriteRule ^admin/?$ admin.html [L]
+  # Si la ruta es /admin/ servir el index.html de esa carpeta
+  RewriteRule ^admin/$ admin/index.html [L]
 
   # Si el archivo o carpeta física existe, cargarlo directamente
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Todo lo demás al index.html
+  # Todo lo demás al index.html de la raíz
   RewriteRule ^(.*)$ index.html [L]
 </IfModule>

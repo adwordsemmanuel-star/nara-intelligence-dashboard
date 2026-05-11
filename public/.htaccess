@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /consulta/premium/
+  RewriteBase /terapia/
 
   # Forzar barra diagonal al final de /admin
   RewriteRule ^admin$ admin/ [R=301,L]
